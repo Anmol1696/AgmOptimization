@@ -29,6 +29,9 @@ def populate_graph(all_lines):
 
     return graph
 
+def get_all_paths(graph, source, destination):
+    return [x for x in nx.all_simple_paths(graph, source, destination)]
+
 if __name__ == "__main__":
     map_file = "data/mum_airport_full_map.txt"
 
@@ -36,3 +39,5 @@ if __name__ == "__main__":
     g = populate_graph(all_lines)
     print g.edges()
     print g[0]
+
+    print get_all_paths(g, 0, 39)
